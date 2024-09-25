@@ -22,15 +22,8 @@
             document.getElementById("result").textContent = "Please enter valid numbers";
             return;
         } else {
-            document.getElementById("result").textContent = sum;
+            document.getElementById("result").textContent = `Sum: ${sum}`;
         }
-    }
-
-    function resetValues() {
-        // Reset the input values and the result text
-        document.getElementById("num1").value = '';
-        document.getElementById("num2").value = '';
-        document.getElementById("result").textContent = '';
     }
 </script>
 
@@ -42,6 +35,7 @@
     }
 
     body {
+        margin: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -80,15 +74,16 @@
 
     button {
         background-color: #ff6cb8;
-        color: #fff;
+        color: #ffffff;
         font-size: 20px;
         font-weight: bold;
-        transition: background-color 0.3s ease;
+
     }
 
     button:hover {
         background-color: #ff4fa8;
         cursor: pointer;
+        border: 1px solid rgb(31, 31, 31);
     }
 
     p {
@@ -112,31 +107,31 @@
             font-size: 16px;
         }
     }
+
+    .btn-group {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+
+
+    }
+
+    .btn-group button {
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: bold;
+    }
 </style>
 
 <body>
-    <h1>Sum Calculator</h1>
-    <br>
-    <br>
-
-    <p style="color:white">This project is based on Node.js and Express. The sum will be calculated dynamically after
-        entering the
-        values.
-    </p>
-
-
-    <br>
-    <br>
-
     <div class="box">
 
         <input type="text" placeholder="Enter first value" id="num1">
         <input type="text" placeholder="Enter second value" id="num2">
-
         <button onclick="sum()">Calculate Sum</button>
-        <button onclick="resetValues()">Reset</button>
         <p id="result"></p> <!-- Display result here -->
     </div>
+
 </body>
 
 </html>
