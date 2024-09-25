@@ -43,6 +43,7 @@
 
     body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
@@ -114,12 +115,24 @@
 </style>
 
 <body>
-     <h1>Sum Calculator</h1>
-        <p>This project is based on Node.js and Express. The sum will be calculated dynamically after entering the values.</p>
+    <h1>Sum Calculator</h1>
+    <br>
+    <br>
+
+    <p style="color:white">This project is based on Node.js and Express. The sum will be calculated dynamically after
+        entering the
+        values.
+    </p>
+
+
+    <br>
+    <br>
+
     <div class="box">
-       
+
         <input type="text" placeholder="Enter first value" id="num1">
         <input type="text" placeholder="Enter second value" id="num2">
+
         <button onclick="sum()">Calculate Sum</button>
         <button onclick="resetValues()">Reset</button>
         <p id="result"></p> <!-- Display result here -->
