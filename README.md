@@ -1,7 +1,7 @@
 
-#  Sum Calculator
+#   Calculator
 
-A simple web app that calculates the sum of two numbers using a backend API.
+A simple web app that calculates the result of two numbers using a backend API.
 
 ## 🛠️ Tech Stack
 - **Frontend**: HTML, JavaScript
