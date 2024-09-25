@@ -59,13 +59,13 @@
             document.getElementById("result").textContent = sum;
         }
     }
-    async function div() {
+    async function division() {
         // Get input values
         const a = parseInt(document.getElementById("num1").value);
         const b = parseInt(document.getElementById("num2").value);
 
         // Fetch the sum from the backend
-        const response = await fetch(`https://sum-server-gn5d.onrender.com/div?a=${a}&b=${b}`);
+        const response = await fetch(`https://sum-server-gn5d.onrender.com/division?a=${a}&b=${b}`);
         const sum = await response.text();
 
         // Check if the input values are valid
@@ -205,7 +205,7 @@
         <div class="btn-group"><button onclick="sum()">+</button>
             <button onclick="sub()">-</button>
             <button onclick="mul()">*</button>
-            <button onclick="div()">/</button>
+            <button onclick="division()">/</button>
 
         </div>
         <button onclick="resetValues()">Reset</button>
