@@ -22,9 +22,10 @@
             document.getElementById("result").textContent = "Please enter valid numbers";
             return;
         } else {
-            document.getElementById("result").textContent =  ${sum};
+            document.getElementById("result").textContent = sum;
         }
     }
+
     function resetValues() {
         // Reset the input values and the result text
         document.getElementById("num1").value = '';
@@ -114,6 +115,8 @@
 
 <body>
     <div class="box">
+        <h1>Sum Calculator</h1>
+        <p>This project is based on Node.js and Express. The sum will be calculated dynamically after entering the values.</p>
         <input type="text" placeholder="Enter first value" id="num1">
         <input type="text" placeholder="Enter second value" id="num2">
         <button onclick="sum()">Calculate Sum</button>
