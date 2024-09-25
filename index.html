@@ -22,8 +22,67 @@
             document.getElementById("result").textContent = "Please enter valid numbers";
             return;
         } else {
-            document.getElementById("result").textContent = `Sum: ${sum}`;
+            document.getElementById("result").textContent = sum;
         }
+    }
+    async function sub() {
+        // Get input values
+        const a = parseInt(document.getElementById("num1").value);
+        const b = parseInt(document.getElementById("num2").value);
+
+        // Fetch the sum from the backend
+        const response = await fetch(`https://sum-server-gn5d.onrender.com/sub?a=${a}&b=${b}`);
+        const sum = await response.text();
+
+        // Check if the input values are valid
+        if (isNaN(a) || isNaN(b)) {
+            document.getElementById("result").textContent = "Please enter valid numbers";
+            return;
+        } else {
+            document.getElementById("result").textContent = sum;
+        }
+    }
+    async function mul() {
+        // Get input values
+        const a = parseInt(document.getElementById("num1").value);
+        const b = parseInt(document.getElementById("num2").value);
+
+        // Fetch the sum from the backend
+        const response = await fetch(`https://sum-server-gn5d.onrender.com/mul?a=${a}&b=${b}`);
+        const sum = await response.text();
+
+        // Check if the input values are valid
+        if (isNaN(a) || isNaN(b)) {
+            document.getElementById("result").textContent = "Please enter valid numbers";
+            return;
+        } else {
+            document.getElementById("result").textContent = sum;
+        }
+    }
+    async function div() {
+        // Get input values
+        const a = parseInt(document.getElementById("num1").value);
+        const b = parseInt(document.getElementById("num2").value);
+
+        // Fetch the sum from the backend
+        const response = await fetch(`https://sum-server-gn5d.onrender.com/div?a=${a}&b=${b}`);
+        const sum = await response.text();
+
+        // Check if the input values are valid
+        if (isNaN(a) || isNaN(b)) {
+            document.getElementById("result").textContent = "Please enter valid numbers";
+            return;
+        } else {
+            document.getElementById("result").textContent = sum;
+        }
+    }
+
+
+    function resetValues() {
+        // Reset the input values and the result text
+        document.getElementById("num1").value = '';
+        document.getElementById("num2").value = '';
+        document.getElementById("result").textContent = '';
     }
 </script>
 
@@ -124,11 +183,33 @@
 </style>
 
 <body>
+    <br>
+    <h1 style="color:white"> Calculator</h1>
+    <br>
+
+
+    <p style="color:rgb(245, 231, 231); padding:10px;">This project is based on Node.js and Express. The result will be
+        calculated
+        dynamically after entering the values.
+    </p>
+
+
+    <br>
+    <br>
+
     <div class="box">
 
         <input type="text" placeholder="Enter first value" id="num1">
         <input type="text" placeholder="Enter second value" id="num2">
-        <button onclick="sum()">Calculate Sum</button>
+
+        <div class="btn-group"><button onclick="sum()">+</button>
+            <button onclick="sub()">-</button>
+            <button onclick="mul()">*</button>
+            <button onclick="div()">/</button>
+
+        </div>
+        <button onclick="resetValues()">Reset</button>
+
         <p id="result"></p> <!-- Display result here -->
     </div>
 
