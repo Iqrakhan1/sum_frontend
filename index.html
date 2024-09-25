@@ -25,6 +25,12 @@
             document.getElementById("result").textContent =  ${sum};
         }
     }
+    function resetValues() {
+        // Reset the input values and the result text
+        document.getElementById("num1").value = '';
+        document.getElementById("num2").value = '';
+        document.getElementById("result").textContent = '';
+    }
 </script>
 
 <style>
@@ -111,6 +117,7 @@
         <input type="text" placeholder="Enter first value" id="num1">
         <input type="text" placeholder="Enter second value" id="num2">
         <button onclick="sum()">Calculate Sum</button>
+        <button onclick="resetValues()">Reset</button>
         <p id="result"></p> <!-- Display result here -->
     </div>
 </body>
